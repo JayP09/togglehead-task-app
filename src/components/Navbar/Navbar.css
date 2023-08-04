@@ -1,0 +1,76 @@
+/* Common Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  background-color: #12406f;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.navMenuContainer {
+  display: flex;
+  gap: 2rem;
+}
+
+.navMenu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  list-style-type: none;
+}
+
+.navMenu li {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.navMenu li a {
+  text-decoration: none;
+  color: white;
+}
+
+.navMenu li .icon {
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.navAction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navAction button {
+  background-color: white;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  color: #12406f;
+  font-weight: 700;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1170px) {
+  .navMenu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .navbar {
+    padding: 1rem;
+  }
+  .navAction button {
+    padding: 0.75rem 1rem;
+  }
+}
