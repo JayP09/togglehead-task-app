@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .navMenuContainer {
@@ -18,27 +19,8 @@
   gap: 2rem;
 }
 
-.navMenu {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  list-style-type: none;
-}
-
-.navMenu li {
-  display: flex;
-  gap: 0.25rem;
-  align-items: center;
-}
-
-.navMenu li a {
-  text-decoration: none;
-  color: white;
-}
-
-.navMenu li .icon {
-  margin-top: 5px;
-  font-size: 10px;
+.searchIcon {
+  cursor: pointer;
 }
 
 .navAction {
@@ -59,10 +41,23 @@
   border-radius: 10px;
 }
 
+.menuIcon {
+  display: none;
+}
+
 /* Media Queries */
 @media only screen and (max-width: 1170px) {
-  .navMenu {
+  .navMenuContainer {
+    position: relative;
+  }
+  .hide {
     display: none;
+  }
+  .menuIcon {
+    display: block;
+    color: "white";
+    font-size: 30px;
+    cursor: pointer;
   }
 }
 

@@ -1,36 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
+import NavMenu from "../NavMenu/NavMenu";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="navbar">
       <h1 className="logo">Logo</h1>
       <div className="navMenuContainer">
-        <ul className="navMenu">
-          <li>
-            <a href="/">Qualifications</a>
-            <i class="fa-solid fa-chevron-down icon"></i>
-          </li>
-          <li>
-            <a href="/">Organizations</a>
-            <i class="fa-solid fa-chevron-down icon"></i>
-          </li>
-          <li>
-            <a href="/">Research & Analysis</a>
-            <i class="fa-solid fa-chevron-down icon"></i>
-          </li>
-          <li>
-            <a href="/">Lorem ipsum</a>
-            <i class="fa-solid fa-chevron-down icon"></i>
-          </li>
-          <li>
-            <a href="/">Lorem ipsum</a>
-            <i class="fa-solid fa-chevron-down icon"></i>
-          </li>
-        </ul>
+        <NavMenu isOpen={isOpen} closeMenu={() => setIsOpen(false)} />
         <div className="navAction">
-          <i class="fa-solid fa-magnifying-glass search"></i>
+          <i className="fa-solid fa-magnifying-glass searchIcon"></i>
           <button>Enrolment</button>
+          <i
+            className="fa-solid fa-bars menuIcon"
+            onClick={() => setIsOpen(true)}
+          ></i>
         </div>
       </div>
     </nav>
