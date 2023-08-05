@@ -15,7 +15,7 @@ const HeroSection = () => {
         <button>
           Know more
           <span>
-            <i class="fa-solid fa-caret-right"></i>
+            <i className="fa-solid fa-caret-right"></i>
           </span>
         </button>
       </div>
