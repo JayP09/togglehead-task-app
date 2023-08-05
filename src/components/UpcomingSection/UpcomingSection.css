@@ -1,0 +1,77 @@
+/* upcomingSection.css */
+.upcomingContainer {
+  padding: 2rem 6rem;
+}
+
+.upcomingInfo {
+  display: flex;
+}
+
+.upcomingInfoContent {
+  max-width: 250px;
+}
+
+.upcomingInfoContent h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  color: #12406f;
+}
+
+.upcomingInfoContent p {
+  font-size: 14px;
+  color: #848484;
+}
+
+.divider {
+  border-left: 1px solid #d3d3d3;
+  margin: 0 2rem;
+}
+
+.upcomingExamContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.upcomingExam {
+  display: flex;
+  margin: 1rem;
+  gap: 1rem;
+}
+
+.upcomingExam i {
+  margin-top: 0.25rem;
+  font-size: 35px;
+}
+
+.examDetails h3 {
+  color: #12406f;
+  font-weight: 700;
+}
+
+.examDetails p {
+  color: gray;
+  font-weight: 500;
+}
+
+
+@media only screen and (max-width: 640px) {
+  .upcomingContainer {
+    padding: 2rem 1rem;
+  }
+  .upcomingInfo {
+    flex-direction: column;
+  }
+  .upcomingInfoContent {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  .upcomingInfoContent h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: #12406f;
+  }
+  .upcomingExamContainer {
+    gap: 1rem;
+  }
+}
