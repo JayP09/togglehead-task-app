@@ -1,0 +1,45 @@
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 6rem;
+}
+.faqSection h1 {
+  text-align: center;
+}
+.accordionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #525252;
+  cursor: pointer;
+  padding: 1rem 0;
+  border-bottom: 1px solid #d3d3d3;
+}
+.title h3 {
+  font-weight: 600;
+}
+.titleActive {
+  border-bottom: 1px solid #12406f;
+}
+.active {
+  color: #12406f;
+}
+.title i {
+  font-size: 30px;
+}
+.accordionSectionContent {
+  margin-top: 1rem;
+  padding: 1rem 0;
+  color: #525252;
+}
+@media only screen and (max-width: 640px) {
+  .faqSection {
+    padding: 3rem 1rem;
+  }
+}
