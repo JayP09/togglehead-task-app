@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import "./HeroSection.css";
-import Card from "./Card";
 
 const slides = [
   {
@@ -24,45 +23,36 @@ const slides = [
 ];
 
 const HeroSection = () => {
-  const heroContainerRef = useRef(null);
-  const [currentSlide, setCurrentSlide] = useState(0); // useState to keep track of the current slide
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    let width = heroContainerRef.current.clientWidth;
-    const totalSlides = slides.length;
-    if (currentSlide === totalSlides - 1) {
-      // If it's the last slide, reset to the first slide (index 0)
-      heroContainerRef.current.scrollLeft = 0;
-      setCurrentSlide(0);
-    } else {
-      // Otherwise, move to the next slide
-      heroContainerRef.current.scrollLeft =
-        heroContainerRef.current.scrollLeft + width;
-      setCurrentSlide(currentSlide + 1);
-    }
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
   };
 
   const prevSlide = () => {
-    let width = heroContainerRef.current.clientWidth;
-    const totalSlides = slides.length;
-    if (currentSlide === 0) {
-      // If it's the first slide, move to the last slide
-      heroContainerRef.current.scrollLeft = width * (totalSlides - 1);
-      setCurrentSlide(totalSlides - 1);
-    } else {
-      // Otherwise, move to the previous slide
-      heroContainerRef.current.scrollLeft =
-        heroContainerRef.current.scrollLeft - width;
-      setCurrentSlide(currentSlide - 1);
-    }
+    setCurrentSlide(
+      (prevSlide) => (prevSlide - 1 + slides.length) % slides.length
+    );
   };
 
+  const { title, content, imgSrc } = slides[currentSlide];
+
   return (
-    <main>
-      <div className="container" ref={heroContainerRef}>
-        {slides.map((slide, index) => (
-          <Card key={index} slide={slide} />
-        ))}
+    <main className="container">
+      <div>
+        <div className="containerLeft">
+          <h1>{title}</h1>
+          <p>{content}</p>
+          <button>
+            Know more
+            <span>
+              <i className="fa-solid fa-caret-right"></i>
+            </span>
+          </button>
+        </div>
+        <div className="containerRight">
+          <img src={imgSrc} alt="hero section" />
+        </div>
       </div>
       <div>
         <button className="sliderButtons" onClick={prevSlide}>
